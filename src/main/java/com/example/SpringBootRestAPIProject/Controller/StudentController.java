@@ -1,5 +1,7 @@
 package com.example.SpringBootRestAPIProject.Controller;
 
+import com.example.SpringBootRestAPIProject.Dto.StudentLocationDto;
+import com.example.SpringBootRestAPIProject.Service.Impl.StudentServiceImpl;
 import com.example.SpringBootRestAPIProject.Service.StudentService;
 import com.example.SpringBootRestAPIProject.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,14 @@ public class StudentController {
         public void deleteStudent(@PathVariable int id){
         retriveData.deleteDetails(id);
     }
+
+    //controllers for dto
+    @GetMapping("/student-location")
+    public List<StudentLocationDto> getAllStudentLocation(){
+        return retriveData.getAllStudentLocation();
+    }
+
+
     }
 
 

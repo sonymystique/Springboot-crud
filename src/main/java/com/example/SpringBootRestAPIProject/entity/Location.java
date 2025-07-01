@@ -11,19 +11,18 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table
+@Table(name = "locations")
 //@RequiredArgsConstructor
 public class Location {
 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
-
-    public String place;
-    public String description;
-    public double longitude;
-    public double latitude;
+    private long id;
+    private String place;
+    private String description;
+    private double longitude;
+    private double latitude;
 
 
 
