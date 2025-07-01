@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student")
-public class student {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rollNo;
@@ -15,11 +15,11 @@ public class student {
     @Column(name = "student_branch")
     private String branch;
 
-    public student(){
+    public Student(){
 
     }
 
-    public student(String name, float percentage, String branch) {
+    public Student(String name, float percentage, String branch) {
         super();
         this.name = name;
         this.percentage = percentage;
@@ -67,4 +67,9 @@ public class student {
                 ", branch='" + branch + '\'' +
                 '}';
     }
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name="location_id")
+
+
 }
